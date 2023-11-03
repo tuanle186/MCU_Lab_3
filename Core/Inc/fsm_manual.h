@@ -8,7 +8,8 @@
 #ifndef INC_RED_MAN_H_
 #define INC_RED_MAN_H_
 
-void fsm_for_red_man_mode();
-void increase_T_RED();
+void fsm_red_manual();
+void fsm_amber_manual();
+void fsm_green_manual();
 
 #endif /* INC_RED_MAN_H_ */

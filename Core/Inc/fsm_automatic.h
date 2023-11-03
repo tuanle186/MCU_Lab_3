@@ -11,6 +11,8 @@
 extern int T_RED;
 extern int T_AMBER;
 extern int T_GREEN;
-void fsm_for_automatic_mode();
+
+void fsm_automatic();
+void led_config();
 
 #endif /* INC_FSM_AUTOMATIC_H_ */

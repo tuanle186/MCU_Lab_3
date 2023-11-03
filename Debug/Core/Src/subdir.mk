@@ -6,10 +6,12 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/fsm_automatic.c \
+../Core/Src/fsm_manual.c \
+../Core/Src/global.c \
 ../Core/Src/input_processing.c \
 ../Core/Src/input_reading.c \
 ../Core/Src/main.c \
-../Core/Src/red_man.c \
+../Core/Src/seven_seg.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
 ../Core/Src/syscalls.c \
@@ -19,10 +21,12 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/fsm_automatic.o \
+./Core/Src/fsm_manual.o \
+./Core/Src/global.o \
 ./Core/Src/input_processing.o \
 ./Core/Src/input_reading.o \
 ./Core/Src/main.o \
-./Core/Src/red_man.o \
+./Core/Src/seven_seg.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
 ./Core/Src/syscalls.o \
@@ -32,10 +36,12 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/fsm_automatic.d \
+./Core/Src/fsm_manual.d \
+./Core/Src/global.d \
 ./Core/Src/input_processing.d \
 ./Core/Src/input_reading.d \
 ./Core/Src/main.d \
-./Core/Src/red_man.d \
+./Core/Src/seven_seg.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \
 ./Core/Src/syscalls.d \

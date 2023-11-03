@@ -22,11 +22,14 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "global.h"
 #include "timer.h"
 #include "input_processing.h"
 #include "input_reading.h"
 #include "fsm_automatic.h"
-#include "red_man.h"
+#include "fsm_manual.h"
+#include "seven_seg.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,16 +101,32 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int mode_state = 1;
-  setTimer0(500);
+  setTimer2(250);
+  setTimer3(250);
+  int index_led_1 = 0;
+  int index_led_2 = 0;
+  int red_counter = T_RED/1000;
+  int amber_counter = T_AMBER/1000;
+  int green_counter = T_GREEN/1000;
   while (1)
   {
-	  fsm_for_button_processing(&mode_state);
-	  if (mode_state == 1) fsm_for_automatic_mode();
-	  if (mode_state == 2) {
-		  fsm_for_red_man_mode();
-	  }
+	  fsm_automatic();
+	  fsm_red_manual();
+	  fsm_amber_manual();
+	  fsm_green_manual();
+	  fsm_button_processing();
 
+	  // 2 7_SEG_LEDs scanning
+	  if (timer2_flag == 1) {
+		  update7SEG_1(index_led_1++);
+		  if (index_led_1 >= 2) index_led_1 = 0;
+		  setTimer2(250);
+	  }
+	  if (timer3_flag == 1) {
+		  update7SEG_2(index_led_2++);
+		  if (index_led_2 >= 2) index_led_2 = 0;
+		  setTimer3(250);
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

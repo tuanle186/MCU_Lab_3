@@ -23,7 +23,8 @@ Core/Src/fsm_automatic.o: ../Core/Src/fsm_automatic.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Inc/input_reading.h ../Core/Inc/timer.h
+ ../Core/Inc/global.h ../Core/Inc/fsm_automatic.h ../Core/Inc/timer.h \
+ ../Core/Inc/input_reading.h ../Core/Inc/seven_seg.h
 
 ../Core/Inc/main.h:
 
@@ -75,6 +76,12 @@ Core/Src/fsm_automatic.o: ../Core/Src/fsm_automatic.c ../Core/Inc/main.h \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
-../Core/Inc/input_reading.h:
+../Core/Inc/global.h:
+
+../Core/Inc/fsm_automatic.h:
 
 ../Core/Inc/timer.h:
+
+../Core/Inc/input_reading.h:
+
+../Core/Inc/seven_seg.h:
