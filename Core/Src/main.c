@@ -101,13 +101,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer2(250);
-  setTimer3(250);
-  int index_led_1 = 0;
-  int index_led_2 = 0;
-  int red_counter = T_RED/1000;
-  int amber_counter = T_AMBER/1000;
-  int green_counter = T_GREEN/1000;
+  setTimer2(125);
+  int index_led = 0;
   while (1)
   {
 	  fsm_automatic();
@@ -118,14 +113,9 @@ int main(void)
 
 	  // 2 7_SEG_LEDs scanning
 	  if (timer2_flag == 1) {
-		  update7SEG_1(index_led_1++);
-		  if (index_led_1 >= 2) index_led_1 = 0;
-		  setTimer2(250);
-	  }
-	  if (timer3_flag == 1) {
-		  update7SEG_2(index_led_2++);
-		  if (index_led_2 >= 2) index_led_2 = 0;
-		  setTimer3(250);
+		  update7SEG(index_led++);
+		  if (index_led >= 4) index_led = 0;
+		  setTimer2(125);
 	  }
     /* USER CODE END WHILE */
 

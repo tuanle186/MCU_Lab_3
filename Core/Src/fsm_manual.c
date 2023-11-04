@@ -8,12 +8,14 @@
 #include "global.h"
 #include "fsm_manual.h"
 #include "timer.h"
+#include "seven_seg.h"
 
 void fsm_red_manual() {
 	switch(status) {
 		case MODE2:
 			led_config();
-			setTimer1(500); // for blinking red leds
+			setTimer1(500);
+			update7SEG_buffer_manual(2, T_RED);
 			status = AUTO_RED;
 			break;
 		case AUTO_RED:
@@ -37,7 +39,8 @@ void fsm_amber_manual() {
 	switch(status) {
 		case MODE3:
 			led_config();
-			setTimer1(500); // for blinking amber leds
+			setTimer1(500);
+			update7SEG_buffer_manual(3, T_AMBER);
 			status = AUTO_AMBER;
 			break;
 		case AUTO_AMBER:
@@ -61,7 +64,8 @@ void fsm_green_manual() {
 	switch(status) {
 		case MODE4:
 			led_config();
-			setTimer1(500); // for blinking green leds
+			setTimer1(500);
+			update7SEG_buffer_manual(4, T_GREEN);
 			status = AUTO_GREEN;
 			break;
 		case AUTO_GREEN:

@@ -4,3 +4,4 @@ timer.c:25:6:setTimer2	16	static
 timer.c:30:6:setTimer3	16	static
 timer.c:35:6:setTimer4	16	static
 timer.c:40:6:timer_run	4	static
+timer.c:63:5:get_timer0_counter	4	static

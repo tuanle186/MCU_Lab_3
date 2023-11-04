@@ -59,3 +59,7 @@ void timer_run() {
 		if (timer4_counter == 0) timer4_flag = 1;
 	}
 }
+
+int get_timer0_counter() {
+	return timer0_counter;
+}

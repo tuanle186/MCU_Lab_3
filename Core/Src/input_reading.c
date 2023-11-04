@@ -6,7 +6,7 @@
  */
 
 #include "main.h"
-// we aim to work with more than one buttons
+// we aim to work with 3 buttons
 #define N0_OF_BUTTONS 				       3
 
 // timer interrupt duration is 10ms, so to pass 1 second,

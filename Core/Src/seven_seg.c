@@ -7,7 +7,7 @@
 
 #include "main.h"
 
-int seven_seg_buffer[4] = {9, 9, 9, 9};
+int seven_seg_buffer[4] = {8, 8, 8, 8};
 
 void display7SEG(int num) {
 	switch(num) {
@@ -55,33 +55,25 @@ void display7SEG(int num) {
 	}
 }
 
-void update7SEG_1(int index) {
+void update7SEG(int index) {
 	switch(index) {
 		case 0:
-			HAL_GPIO_WritePin(GPIOA, EN1_Pin, SET);
+			HAL_GPIO_WritePin(GPIOA, EN1_Pin | EN2_Pin | EN3_Pin, SET);
 			display7SEG(seven_seg_buffer[0]);
 			HAL_GPIO_WritePin(GPIOA, EN0_Pin, RESET);
 			break;
 		case 1:
-			HAL_GPIO_WritePin(GPIOA, EN0_Pin, SET);
+			HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN2_Pin | EN3_Pin, SET);
 			display7SEG(seven_seg_buffer[1]);
 			HAL_GPIO_WritePin(GPIOA, EN1_Pin, RESET);
 			break;
-		default:
-			HAL_GPIO_WritePin(GPIOA, EN0_Pin|EN1_Pin|EN2_Pin|EN3_Pin, SET);
-			break;
-	}
-}
-
-void update7SEG_2(int index) {
-	switch(index) {
-		case 0:
-			HAL_GPIO_WritePin(GPIOA, EN3_Pin, SET);
+		case 2:
+			HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN3_Pin, SET);
 			display7SEG(seven_seg_buffer[2]);
 			HAL_GPIO_WritePin(GPIOA, EN2_Pin, RESET);
 			break;
-		case 1:
-			HAL_GPIO_WritePin(GPIOA, EN2_Pin, SET);
+		case 3:
+			HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin | EN2_Pin, SET);
 			display7SEG(seven_seg_buffer[3]);
 			HAL_GPIO_WritePin(GPIOA, EN3_Pin, RESET);
 			break;
@@ -90,6 +82,7 @@ void update7SEG_2(int index) {
 			break;
 	}
 }
+
 
 void update7SEG_buffer_auto(int duration_1, int duration_2) {
 	seven_seg_buffer[0] = duration_1/10;

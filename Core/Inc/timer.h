@@ -20,7 +20,7 @@ void setTimer2(int duration);
 void setTimer3(int duration);
 void setTimer4(int duration);
 
-int get_Timer0_counter();
+int get_timer0_counter();
 
 void timer_run();
 

@@ -7,9 +7,9 @@
 #include "main.h"
 #include "global.h"
 
-int T_RED = 5000;
-int T_AMBER = 2000;
-int T_GREEN = 3000;
+int T_RED = 5;
+int T_AMBER = 2;
+int T_GREEN = 3;
 
 int status = INIT;
 
