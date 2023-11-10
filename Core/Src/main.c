@@ -111,7 +111,7 @@ int main(void)
 	  fsm_green_manual();
 	  fsm_button_processing();
 
-	  // 2 7_SEG_LEDs scanning
+	  // 7_SEG_LEDs scanning
 	  if (timer2_flag == 1) {
 		  update7SEG(index_led++);
 		  if (index_led >= 4) index_led = 0;
